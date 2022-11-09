@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+        <h3>Register</h3>
+        <form (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="form-label">First Name</label>
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="form-label">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="form-label">Password</label>
+                <input type="password" class="form-control" name="password"[(ngModel)]="password" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+            </div>
+
+            <div class="alert alert-warning" role="alert" [hidden]="password === confirmPassword">
+                Password and confirm password values do not match
+            </div>
+
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+
+    </div>
+</div>

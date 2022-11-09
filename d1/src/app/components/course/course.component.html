@@ -1,0 +1,16 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h4 class="card-title">{{course.name}}</h4>
+        <p>{{course.description}}</p>
+        <p>PHP {{course.price}}</p>
+        <!-- This div will only be shown IF the user is an admin -->
+        <div *ngIf="isAdmin">
+            <button type="button" class="btn btn-info mx-3">Edit</button>
+            <button type="button" class="btn btn-warning mx-3">Archive</button>
+        </div>
+        <!-- This div will only be shown IF a regular user is logged in -->
+        <div *ngIf="hasToken && !isAdmin">
+            <button type="button" class="btn btn-success" (click)="enroll()">Enroll</button>
+        </div>
+    </div>
+</div>

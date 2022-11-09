@@ -1,0 +1,15 @@
+<h3 class="text-center my-4">Course Catalog</h3>
+
+<div class="row mt-4">
+  <div *ngIf="isAdmin">
+    <button
+      type="button"
+      class="btn btn-success my-2 float-end"
+      (click)="addCourses()"
+    >
+      Create Course
+    </button>
+  </div>
+  <!-- with the use of [] we will be able to pass the course item from our array into an input field in the course component -->
+  <app-course *ngFor="let course of courses" [course]="course"></app-course>
+</div>

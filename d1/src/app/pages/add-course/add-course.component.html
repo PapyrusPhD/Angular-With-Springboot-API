@@ -1,0 +1,53 @@
+<head>
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<div class="row justify-content-center">
+  <div class="col-12 col-md-6 mt-3">
+    <h3>Add Course</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3 mt-4">
+        <label for="name">Course Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          name="description"
+          [(ngModel)]="description"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          name="price"
+          [(ngModel)]="price"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success">Add course</button>
+    </form>
+  </div>
+</div>
